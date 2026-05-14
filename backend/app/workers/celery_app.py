@@ -25,5 +25,10 @@ celery_app.conf.update(
             "task": "app.workers.simulation.simulate_traffic_tick",
             "schedule": 60.0,
         },
+        # Autonomous agent — runs every 30 minutes
+        "autonomous-agent": {
+            "task": "tasks.autonomous_agent",
+            "schedule": crontab(minute="*/30"),
+        },
     },
 )

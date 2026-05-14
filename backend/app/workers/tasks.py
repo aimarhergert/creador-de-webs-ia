@@ -78,3 +78,32 @@ def optimize_portfolio_task():
             return await run_portfolio_optimization(db)
 
     return _run(_execute())
+
+
+@celery_app.task(name="tasks.autonomous_agent", bind=True, max_retries=1)
+def autonomous_agent_task(self):
+    """Periodic autonomous agent: research markets, create winning assets."""
+    logger.info("[Task] 🤖 Autonomous Agent — iniciando ciclo autónomo...")
+
+    async def _execute():
+        from app.services.autonomous_agent import run_autonomous_agent
+        return await run_autonomous_agent(
+            sectors=["tech", "home", "health"],
+            max_assets=2,
+            dry_run=False,
+        )
+
+    try:
+        result = _run(_execute())
+        logger.info(
+            f"[Task] Agent completado: {result.assets_created} assets, "
+            f"{result.blog_posts_created} blogs, top: {result.top_keyword}"
+        )
+        return {
+            "assets_created": result.assets_created,
+            "blog_posts_created": result.blog_posts_created,
+            "top_keyword": result.top_keyword,
+        }
+    except Exception as exc:
+        logger.error(f"[Task] Agent falló: {exc}")
+        return {"error": str(exc)}
