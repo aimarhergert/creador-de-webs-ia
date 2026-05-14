@@ -162,13 +162,13 @@ export default function ScannerPage() {
               <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 space-y-2">
                 <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">SEO Técnico</h3>
                 {[
-                  ["Título ({result.title_length} chars)", result.title_length >= 30 && result.title_length <= 65],
-                  ["Meta ({result.meta_length} chars)", result.meta_length >= 70 && result.meta_length <= 160],
-                  ["H1: 1 (ideal)", true],
-                  ["H2: {result.h2_count}+", true],
-                  ["Viewport Mobile", true],
-                  ["Schema JSON-LD", true],
-                  ["OpenGraph Tags", true],
+                  [`Título (${result.title_length} chars)`, result.title_length >= 30 && result.title_length <= 65],
+                  [`Meta (${result.meta_length} chars)`, result.meta_length >= 70 && result.meta_length <= 160],
+                  [`H1: ${result.h1_count} (ideal: 1)`, result.h1_count === 1],
+                  [`H2: ${result.h2_count}`, result.h2_count >= 2],
+                  ["Viewport Mobile", result.has_mobile_viewport],
+                  ["Schema JSON-LD", result.has_schema ?? false],
+                  ["OpenGraph Tags", result.has_og_tags ?? false],
                 ].map(([label, ok], i) => (
                   <div key={i} className="flex items-center justify-between text-xs">
                     <span className="text-gray-500">{label}</span>
