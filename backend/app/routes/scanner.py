@@ -10,7 +10,7 @@ from app.database import get_db
 from app.dependencies import get_current_user
 from app.models.user import User
 from app.models.scan import WebScan
-from app.services.web_scanner import scan_website, ScanResult
+from app.services.web_scanner import scan_website
 
 router = APIRouter()
 
@@ -56,8 +56,16 @@ class ScanOut(BaseModel):
     model_config = {"from_attributes": True}
 
 
+class ScanListOut(BaseModel):
+    total: int
+    items: list[ScanOut]
+
+
+class ScanFullOut(ScanOut):
+    raw_data: str | None = None
+
+
 def _parse_scan_seo(scan: WebScan) -> dict:
-    """Extract SEO detail fields from raw_data JSON."""
     defaults = {
         "title_length": len(scan.title or ""),
         "meta_length": len(scan.meta_description or ""),
@@ -71,11 +79,10 @@ def _parse_scan_seo(scan: WebScan) -> dict:
             raw = json.loads(scan.raw_data)
             seo_data = raw.get("seo", {})
             content_data = raw.get("content", {})
-            defaults.update({k: seo_data.get(k, defaults[k]) for k in [
-                "title_length", "h1_count", "h2_count", "internal_links",
-                "external_links", "image_count", "images_with_alt",
-                "has_schema", "has_og_tags", "has_mobile_viewport", "load_time_ms",
-            ]})
+            for k in ["title_length", "h1_count", "h2_count", "internal_links",
+                       "external_links", "image_count", "images_with_alt",
+                       "has_schema", "has_og_tags", "has_mobile_viewport", "load_time_ms"]:
+                defaults[k] = seo_data.get(k, defaults[k])
             defaults["meta_length"] = len(scan.meta_description or "")
             defaults["readability_score"] = content_data.get("readability_score", 0.0)
             defaults["sentiment"] = content_data.get("sentiment", "")
@@ -107,9 +114,6 @@ def _scan_to_out(scan: WebScan) -> ScanOut:
         error=scan.error,
         created_at=scan.created_at.isoformat() if scan.created_at else "",
     )
-    total: int
-    items: list[ScanOut]
-
 
 
 @router.post("/analyze", response_model=ScanFullOut)
@@ -118,20 +122,16 @@ async def analyze_url(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """Analyze an external website for SEO, content, and market intelligence."""
     if not body.url.startswith("http"):
         body.url = f"https://{body.url}"
 
-    # Run scan
     result = await scan_website(body.url, deep_analysis=body.deep_analysis)
 
-    # Persist
     from app.services.web_scanner import persist_scan
     scan_id = await persist_scan(body.url, result)
 
-    # Return
-    scan_result = await db.execute(select(WebScan).where(WebScan.id == scan_id))
-    scan = scan_result.scalar_one()
+    scan_r = await db.execute(select(WebScan).where(WebScan.id == scan_id))
+    scan = scan_r.scalar_one()
     seo = _parse_scan_seo(scan)
 
     return ScanFullOut(
@@ -158,18 +158,6 @@ async def analyze_url(
     )
 
 
-class ScanListOut(BaseModel):
-    total: int
-    items: list[ScanOut]
-
-
-class ScanFullOut(ScanOut):
-    raw_data: str | None = None
-
-    model_config = {"from_attributes": True}
-
-
-
 @router.get("/history", response_model=ScanListOut)
 async def list_scans(
     limit: int = Query(default=20, le=100),
@@ -184,10 +172,7 @@ async def list_scans(
     )
     scans = result.scalars().all()
 
-    return ScanListOut(
-        total=total,
-        items=[_scan_to_out(s) for s in scans]
-    )
+    return ScanListOut(total=total, items=[_scan_to_out(s) for s in scans])
 
 
 @router.get("/history/{scan_id}", response_model=ScanFullOut)
