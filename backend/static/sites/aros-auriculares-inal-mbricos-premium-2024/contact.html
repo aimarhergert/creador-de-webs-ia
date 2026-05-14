@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020617">
+  <title>Contacto | SoundPeak</title>
+  <meta name="description" content="Contacta con SoundPeak. Estamos aquí para ayudarte con todo lo relacionado con auriculares inalámbricos premium 2024.">
+  <meta name="robots" content="index, follow">
+  
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contacto | SoundPeak">
+  <meta property="og:description" content="Contacta con SoundPeak. Estamos aquí para ayudarte con todo lo relacionado con auriculares inalámbricos premium 2024.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=1200&h=630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contacto | SoundPeak">
+  <meta name="twitter:description" content="Contacta con SoundPeak. Estamos aquí para ayudarte con todo lo relacionado con auriculares inalámbricos premium 2024.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            accent: {
+              50: '#a78bfa15',
+              100: '#a78bfa25',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#4c1d95',
+            },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease forwards',
+            'fade-in': 'fadeIn 0.5s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contacto — SoundPeak",
+  "description": "Página de contacto de SoundPeak",
+  "url": "contact.html"
+}
+</script>
+  <style>
+    :root {
+      --accent-color: #8b5cf6;
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(circle, rgba(139,92,246,0.12) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .glow-orb {
+      filter: blur(80px);
+      border-radius: 9999px;
+      position: absolute;
+      pointer-events: none;
+    }
+    .form-input {
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(100,116,139,0.3);
+      border-radius: 0.75rem;
+      color: #f1f5f9;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139,92,246,0.15);
+    }
+    .form-input::placeholder {
+      color: #475569;
+    }
+    .form-input option {
+      background: #0f172a;
+      color: #f1f5f9;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #cbd5e1;
+      margin-bottom: 0.4rem;
+    }
+    .required-star {
+      color: #a78bfa;
+      margin-left: 2px;
+    }
+    details summary {
+      cursor: pointer;
+      list-style: none;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] .faq-icon-plus {
+      display: none;
+    }
+    details:not([open]) .faq-icon-minus {
+      display: none;
+    }
+    details[open] summary .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-chevron {
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 font-sans text-slate-300 antialiased">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-accent-500 flex items-center justify-center shadow-lg shadow-accent-500/25 group-hover:scale-110 transition-transform">
+            <span class="text-slate-950 font-black text-sm">S</span>
+          </div>
+          <span class="font-bold text-white text-lg tracking-tight">SoundPeak</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Inicio</a>
+<a href="blog.html" class="text-slate-400 hover:text-white transition-colors">Blog</a>
+<a href="contact.html" class="text-white">Contacto</a>
+
+        </div>
+
+        <!-- CTA + Mobile toggle -->
+        <div class="flex items-center gap-3">
+          <a href="contact.html"
+            class="hidden md:inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-2.5 transition-all hover:scale-105 shadow-lg shadow-accent-500/20">
+            Ver recomendaciones
+          </a>
+          <button id="mobile-menu-btn" aria-label="Open menu"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-colors">
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-800">
+      <div class="px-4 py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Inicio</a>
+<a href="blog.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Blog</a>
+<a href="contact.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Contacto</a>
+        <a href="contact.html" class="block mt-2 text-center bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-3 transition-colors">
+          Ver recomendaciones
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section id="contact-hero" data-animate="fade-up" class="relative pt-32 pb-16 overflow-hidden">
+      <!-- Background grid -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
+      <!-- Glow orbs -->
+      <div class="glow-orb w-96 h-96 bg-violet-600/20 top-0 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="glow-orb w-64 h-64 bg-purple-500/15 bottom-0 right-1/4 translate-x-1/2 translate-y-1/2"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-sm text-slate-500 mb-8">
+          <a href="index.html" class="hover:text-slate-300 transition-colors">Inicio</a>
+          <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span class="text-slate-400">Contacto</span>
+        </nav>
+
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-400/20 rounded-full px-4 py-1.5 text-xs font-medium text-accent-400 mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse"></span>
+            Tiempo de respuesta &lt; 24h
+          </div>
+          <h1 class="font-serif text-5xl md:text-6xl font-bold mb-5 leading-tight">
+            <span class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Hablemos</span>
+          </h1>
+          <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-xl">
+            ¿Tienes dudas sobre qué auriculares inalámbricos premium elegir en 2024? Estamos aquí para orientarte sin rodeos. Cuéntanos lo que necesitas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWO-COLUMN CONTACT LAYOUT -->
+    <section id="contact-main" data-animate="fade-up" class="py-12 pb-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+
+          <!-- LEFT COLUMN: Contact Form -->
+          <div class="lg:col-span-3">
+            <div class="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 sm:p-8 hover:border-slate-600/50 transition-all">
+              <div class="mb-7">
+                <h2 class="text-white font-semibold text-xl mb-1">Envíanos un mensaje</h2>
+                <p class="text-slate-500 text-sm">Todos los campos marcados con <span class="text-accent-400">*</span> son obligatorios.</p>
+              </div>
+
+              <!-- Success message -->
+              <div id="form-success" class="hidden mb-6 bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5">
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-emerald-400 font-semibold text-sm">¡Mensaje enviado correctamente!</p>
+                    <p class="text-slate-400 text-sm mt-1">Hemos recibido tu consulta. Te responderemos en menos de 24 horas en el correo proporcionado.</p>
+                  </div>
+                </div>
+              </div>
+
+              <form id="contact-form" novalidate class="space-y-5">
+                <!-- Name + Email row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label for="full-name" class="form-label">
+                      Nombre completo<span class="required-star">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="full-name"
+                      name="full_name"
+                      class="form-input"
+                      placeholder="Ej. Ana García"
+                      required
+                      autocomplete="name"
+                    >
+                    <p class="field-error hidden text-xs text-red-400 mt-1.5" data-for="full-name">Por favor, introduce tu nombre.</p>
+                  </div>
+                  <div>
+                    <label for="email" class="form-label">
+                      Correo electrónico<span class="required-star">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-input"
+                      placeholder="tu@email.com"
+                      required
+                      autocomplete="email"
+                    >
+                    <p class="field-error hidden text-xs text-red-400 mt-1.5" data-for="email">Introduce un correo electrónico válido.</p>
+                  </div>
+                </div>
+
+                <!-- Phone + Subject row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label for="phone" class="form-label">
+                      Teléfono <span class="text-slate-600 font-normal">(opcional)</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="form-input"
+                      placeholder="+34 600 000 000"
+                      autocomplete="tel"
+                    >
+                  </div>
+                  <div>
+                    <label for="subject" class="form-label">
+                      Asunto<span class="required-star">*</span>
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      class="form-input"
+                      required
+                    >
+                      <option value="" disabled selected>Selecciona un asunto</option>
+                      <option value="recomendacion">Recomendación de auriculares</option>
+                      <option value="comparativa">Comparativa de modelos</option>
+                      <option value="calidad-precio">Mejor relación calidad-precio</option>
+                      <option value="colaboracion">Colaboración o patrocinio</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                    <p class="field-error hidden text-xs text-red-400 mt-1.5" data-for="subject">Por favor, selecciona un asunto.</p>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label for="message" class="form-label">
+                    Mensaje<span class="required-star">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    class="form-input resize-none"
+                    placeholder="Cuéntanos qué necesitas. Por ejemplo: 'Busco auriculares para trabajar desde casa con cancelación de ruido y menos de 200€...'"
+                    required
+                  ></textarea>
+                  <p class="field-error hidden text-xs text-red-400 mt-1.5" data-for="message">Por favor, escribe tu mensaje (mínimo 10 caracteres).</p>
+                  <p class="text-slate-600 text-xs mt-1.5 text-right"><span id="char-count">0</span> / 1000 caracteres</p>
+                </div>
+
+                <!-- Privacy consent -->
+                <div class="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="privacy"
+                    name="privacy"
+                    required
+                    class="mt-0.5 w-4 h-4 rounded border-slate-600 bg-slate-800 text-accent-500 focus:ring-accent-500 focus:ring-offset-slate-900 cursor-pointer"
+                  >
+                  <label for="privacy" class="text-sm text-slate-400 cursor-pointer leading-relaxed">
+                    He leído y acepto la <a href="#" class="text-accent-400 hover:text-accent-400/80 underline">Política de Privacidad</a>. Entiendo que mis datos serán tratados únicamente para responder a mi consulta.
+                  </label>
+                </div>
+                <p class="field-error hidden text-xs text-red-400 -mt-3" data-for="privacy">Debes aceptar la política de privacidad.</p>
+
+                <!-- Submit button -->
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="w-full bg-violet-500 hover:bg-violet-400 disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-semibold rounded-xl px-6 py-3.5 transition-all hover:scale-[1.02] shadow-lg shadow-accent-500/20 flex items-center justify-center gap-2 text-sm"
+                >
+                  <span id="submit-text">Enviar mensaje</span>
+                  <svg id="submit-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                  <svg id="submit-spinner" class="w-4 h-4 hidden animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Contact Info -->
+          <aside class="lg:col-span-2 space-y-4">
+
+            <!-- Info cards -->
+            <div class="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 hover:border-slate-600/50 transition-all">
+              <h2 class="text-white font-semibold text-base mb-5">Información de contacto</h2>
+              <div class="space-y-4">
+
+                <!-- Email -->
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-accent-50 border border-accent-400/20 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z

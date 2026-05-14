@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020617">
+  <title>Contacto | AlmohadaPlus</title>
+  <meta name="description" content="Contacta con AlmohadaPlus. Estamos aquí para ayudarte con todo lo relacionado con almohadas.">
+  <meta name="robots" content="index, follow">
+  
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contacto | AlmohadaPlus">
+  <meta property="og:description" content="Contacta con AlmohadaPlus. Estamos aquí para ayudarte con todo lo relacionado con almohadas.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=1200&h=630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contacto | AlmohadaPlus">
+  <meta name="twitter:description" content="Contacta con AlmohadaPlus. Estamos aquí para ayudarte con todo lo relacionado con almohadas.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            accent: {
+              50: '#a78bfa15',
+              100: '#a78bfa25',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#4c1d95',
+            },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease forwards',
+            'fade-in': 'fadeIn 0.5s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contacto — AlmohadaPlus",
+  "description": "Página de contacto de AlmohadaPlus",
+  "url": "contact.html"
+}
+</script>
+  <style>
+    :root {
+      --accent-color: #8b5cf6;
+    }
+    body {
+      background-color: #020617;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .bg-grid {
+      background-image: radial-gradient(circle, rgba(148,103,250,0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .glow-orb {
+      filter: blur(80px);
+      border-radius: 9999px;
+      position: absolute;
+      pointer-events: none;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    [data-animate="fade-up"] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    [data-animate="fade-up"].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(15,23,42,0.8);
+      border: 1px solid rgba(100,116,139,0.3);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 0.875rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: #8b5cf6;
+      box-shadow: 0 0 0 3px rgba(139,92,246,0.12);
+    }
+    .form-input::placeholder {
+      color: #475569;
+    }
+    select.form-input option {
+      background: #0f172a;
+      color: #fff;
+    }
+    .faq-item .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+    .faq-item .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    #form-success {
+      display: none;
+    }
+    #form-success.visible {
+      display: flex;
+    }
+    .contact-info-card {
+      background: #0f172a;
+      border: 1px solid rgba(100,116,139,0.25);
+      border-radius: 16px;
+      padding: 20px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .contact-info-card:hover {
+      border-color: rgba(139,92,246,0.4);
+      transform: translateY(-2px);
+    }
+    .trust-badge {
+      background: rgba(139,92,246,0.06);
+      border: 1px solid rgba(139,92,246,0.2);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-white antialiased">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-accent-500 flex items-center justify-center shadow-lg shadow-accent-500/25 group-hover:scale-110 transition-transform">
+            <span class="text-slate-950 font-black text-sm">A</span>
+          </div>
+          <span class="font-bold text-white text-lg tracking-tight">AlmohadaPlus</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Inicio</a>
+<a href="blog.html" class="text-slate-400 hover:text-white transition-colors">Blog</a>
+<a href="contact.html" class="text-white">Contacto</a>
+
+        </div>
+
+        <!-- CTA + Mobile toggle -->
+        <div class="flex items-center gap-3">
+          <a href="contact.html"
+            class="hidden md:inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-2.5 transition-all hover:scale-105 shadow-lg shadow-accent-500/20">
+            Comprar ahora
+          </a>
+          <button id="mobile-menu-btn" aria-label="Open menu"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-colors">
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-800">
+      <div class="px-4 py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Inicio</a>
+<a href="blog.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Blog</a>
+<a href="contact.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Contacto</a>
+        <a href="contact.html" class="block mt-2 text-center bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-3 transition-colors">
+          Comprar ahora
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="contact-hero" data-animate="fade-up" class="relative pt-32 pb-16 overflow-hidden">
+      <div class="bg-grid absolute inset-0 opacity-40"></div>
+      <!-- Glow orbs -->
+      <div class="glow-orb w-96 h-96 bg-violet-600/20 top-0 left-1/4 -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="glow-orb w-64 h-64 bg-violet-400/10 bottom-0 right-1/4 translate-x-1/2"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="flex items-center justify-center gap-2 text-sm text-slate-500 mb-8">
+          <a href="index.html" class="hover:text-slate-300 transition-colors">Inicio</a>
+          <svg class="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span class="text-slate-400 font-medium">Contacto</span>
+        </nav>
+
+        <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-500/20 rounded-full px-4 py-1.5 text-xs font-medium text-accent-400 mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse"></span>
+          Siempre disponibles para ti
+        </div>
+
+        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <span class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Hablemos</span>
+        </h1>
+        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          ¿Tienes dudas sobre qué almohada es la ideal para ti? ¿Necesitas ayuda con tu pedido? 
+          Nuestro equipo de expertos en descanso está aquí para orientarte.
+        </p>
+      </div>
+    </section>
+
+    <!-- TWO-COLUMN CONTACT SECTION -->
+    <section id="contact-main" data-animate="fade-up" class="py-16 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
+
+          <!-- LEFT COLUMN: Contact Form -->
+          <div class="lg:col-span-3">
+            <div class="bg-slate-900 border border-slate-700/50 rounded-2xl p-8 hover:border-slate-600/50 transition-all">
+              <div class="mb-8">
+                <h2 class="text-2xl font-bold text-white mb-2">Envíanos un mensaje</h2>
+                <p class="text-slate-400 text-sm">Completa el formulario y te responderemos en menos de 24 horas.</p>
+              </div>
+
+              <!-- Success message -->
+              <div id="form-success" class="mb-6 items-center gap-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-5">
+                <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-emerald-400 font-semibold text-sm">¡Mensaje enviado correctamente!</p>
+                  <p class="text-slate-400 text-sm mt-0.5">Gracias por contactarnos. Te responderemos pronto en la dirección de correo indicada.</p>
+                </div>
+              </div>
+
+              <form id="contact-form" novalidate class="space-y-5">
+                <!-- Name + Email -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label for="full-name" class="block text-sm font-medium text-slate-300 mb-2">
+                      Nombre completo <span class="text-accent-400">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="full-name"
+                      name="full-name"
+                      required
+                      placeholder="María García"
+                      class="form-input"
+                      autocomplete="name"
+                    >
+                    <p class="field-error text-red-400 text-xs mt-1.5 hidden">Por favor, introduce tu nombre.</p>
+                  </div>
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-slate-300 mb-2">
+                      Correo electrónico <span class="text-accent-400">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="maria@ejemplo.com"
+                      class="form-input"
+                      autocomplete="email"
+                    >
+                    <p class="field-error text-red-400 text-xs mt-1.5 hidden">Introduce un correo válido.</p>
+                  </div>
+                </div>
+
+                <!-- Phone -->
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">
+                    Teléfono <span class="text-slate-600 text-xs font-normal">(opcional)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+34 600 000 000"
+                    class="form-input"
+                    autocomplete="tel"
+                  >
+                </div>
+
+                <!-- Subject -->
+                <div>
+                  <label for="subject" class="block text-sm font-medium text-slate-300 mb-2">
+                    Asunto <span class="text-accent-400">*</span>
+                  </label>
+                  <select id="subject" name="subject" required class="form-input">
+                    <option value="" disabled selected>Selecciona un asunto...</option>
+                    <option value="consulta-producto">Consulta sobre productos</option>
+                    <option value="recomendacion">Recomendación personalizada de almohada</option>
+                    <option value="pedido">Seguimiento de pedido</option>
+                    <option value="devolucion">Devoluciones y garantías</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                  <p class="field-error text-red-400 text-xs mt-1.5 hidden">Por favor, selecciona un asunto.</p>
+                </div>
+
+                <!-- Message -->
+                <div>
+                  <label for="message" class="block text-sm font-medium text-slate-300 mb-2">
+                    Mensaje <span class="text-accent-400">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows="5"
+                    placeholder="Cuéntanos en qué podemos ayudarte. Por ejemplo: qué postura usas al dormir, si tienes alguna molestia cervical..."
+                    class="form-input resize-none"
+                  ></textarea>
+                  <p class="field-error text-red-400 text-xs mt-1.5 hidden">Por favor, escribe tu mensaje.</p>
+                </div>
+
+                <!-- Privacy consent -->
+                <div class="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="privacy"
+                    name="privacy"
+                    required
+                    class="mt-0.5 w-4 h-4 rounded border-slate-600 bg-slate-800 text-accent-500 focus:ring-accent-500 focus:ring-offset-slate-900 cursor-pointer"
+                  >
+                  <label for="privacy" class="text-slate-400 text-xs leading-relaxed cursor-pointer">
+                    He leído y acepto la <a href="#" class="text-accent-400 hover:text-accent-400/80 underline underline-offset-2">Política de Privacidad</a>. 
+                    Mis datos serán tratados únicamente para gestionar esta consulta.
+                  </label>
+                </div>
+
+                <!-- Submit -->
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="w-full bg-violet-500 hover:bg-violet-400 disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-semibold rounded-xl px-6 py-3.5 transition-all hover:scale-[1.02] shadow-lg shadow-accent-500/20 flex items-center justify-center gap-2 text-sm"
+                >
+                  <span id="submit-text">Enviar mensaje</span>
+                  <svg id="submit-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+                  <svg id="submit-spinner" class="w-4 h-4 hidden animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                  </svg>
+                </button>
+
+                <p class="text-slate-600 text-xs text-center">
+                  También puedes escribirnos directamente a 
+                  <a href="mailto:info@almohadaplus.com" class="text-slate-500 hover:text-accent-400 transition-colors underline underline-offset-2">info@almohadaplus.com</a>
+                </p>
+              </form>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Contact Info -->
+          <aside class="lg:col-span-2 space-y-4">
+            <div class="mb-6">
+              <h2 class="text-xl font-bold text-white mb-2">Información de contacto</h2>

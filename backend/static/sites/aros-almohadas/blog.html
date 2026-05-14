@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020617">
+  <title>Blog | AlmohadaPlus</title>
+  <meta name="description" content="Artículos y guías sobre almohadas. Recursos expertos para AlmohadaPlus.">
+  <meta name="robots" content="index, follow">
+  
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog | AlmohadaPlus">
+  <meta property="og:description" content="Artículos y guías sobre almohadas. Recursos expertos para AlmohadaPlus.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=1200&h=630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | AlmohadaPlus">
+  <meta name="twitter:description" content="Artículos y guías sobre almohadas. Recursos expertos para AlmohadaPlus.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            accent: {
+              50: '#a78bfa15',
+              100: '#a78bfa25',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#4c1d95',
+            },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease forwards',
+            'fade-in': 'fadeIn 0.5s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog de AlmohadaPlus",
+  "description": "Artículos sobre almohadas",
+  "url": "blog.html"
+}
+</script>
+  <style>
+    :root {
+      --accent-color: #8b5cf6;
+    }
+    body {
+      background-color: #020617;
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(circle, #334155 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .glow-orb {
+      filter: blur(80px);
+      border-radius: 9999px;
+      position: absolute;
+      pointer-events: none;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    [data-animate="fade-up"] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    [data-animate="fade-up"].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .featured-card-border {
+      border-left: 4px solid var(--accent-color);
+    }
+    .pill-active {
+      background-color: #8b5cf6;
+      color: #020617;
+    }
+    .pill-inactive {
+      background-color: transparent;
+      border: 1px solid #334155;
+      color: #94a3b8;
+    }
+    .pill-inactive:hover {
+      border-color: #8b5cf6;
+      color: #a78bfa;
+    }
+    input[type="email"]:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #8b5cf6;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-white font-sans antialiased">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-accent-500 flex items-center justify-center shadow-lg shadow-accent-500/25 group-hover:scale-110 transition-transform">
+            <span class="text-slate-950 font-black text-sm">A</span>
+          </div>
+          <span class="font-bold text-white text-lg tracking-tight">AlmohadaPlus</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Inicio</a>
+<a href="blog.html" class="text-white">Blog</a>
+<a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contacto</a>
+
+        </div>
+
+        <!-- CTA + Mobile toggle -->
+        <div class="flex items-center gap-3">
+          <a href="contact.html"
+            class="hidden md:inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-2.5 transition-all hover:scale-105 shadow-lg shadow-accent-500/20">
+            Comprar ahora
+          </a>
+          <button id="mobile-menu-btn" aria-label="Open menu"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-colors">
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-800">
+      <div class="px-4 py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Inicio</a>
+<a href="blog.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Blog</a>
+<a href="contact.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Contacto</a>
+        <a href="contact.html" class="block mt-2 text-center bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-3 transition-colors">
+          Comprar ahora
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="blog-hero" data-animate="fade-up" class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+      <!-- Background grid -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+      <!-- Glow orbs -->
+      <div class="glow-orb w-96 h-96 bg-violet-600/30 top-0 left-1/4 animate-float"></div>
+      <div class="glow-orb w-64 h-64 bg-accent-500/20 bottom-0 right-1/4" style="animation: float 8s ease-in-out infinite reverse;"></div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-transparent to-slate-950"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="flex items-center justify-center gap-2 text-sm text-slate-500 mb-6">
+          <a href="index.html" class="hover:text-slate-300 transition-colors">Inicio</a>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          <span class="text-slate-300 font-medium">Blog</span>
+        </nav>
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-4 py-1.5 text-sm text-accent-400 font-medium mb-6">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/></svg>
+          Guías y recursos expertos
+        </div>
+
+        <!-- Title -->
+        <h1 class="font-serif text-5xl md:text-7xl font-bold mb-5 leading-tight">
+          <span class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Blog</span>
+          <br>
+          <span class="bg-gradient-to-r from-accent-400 to-violet-300 bg-clip-text text-transparent">AlmohadaPlus</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Descubre guías expertas, consejos prácticos y todo lo que necesitas saber sobre almohadas para transformar tu descanso y cuidar tu salud cervical.
+        </p>
+
+        <!-- Category filter pills -->
+        <div class="flex flex-wrap items-center justify-center gap-3" role="group" aria-label="Filtrar categorías">
+          <button class="pill-active rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 category-pill" data-category="all">Todos</button>
+          <button class="pill-inactive rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 category-pill" data-category="guias">Guías</button>
+          <button class="pill-inactive rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 category-pill" data-category="tutoriales">Tutoriales</button>
+          <button class="pill-inactive rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 category-pill" data-category="estrategias">Estrategias</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED POST -->
+    <section id="featured-post" data-animate="fade-up" class="py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section label -->
+        <div class="flex items-center gap-3 mb-8">
+          <span class="h-px flex-1 max-w-[40px] bg-accent-500"></span>
+          <span class="text-accent-400 text-sm font-semibold uppercase tracking-wider">Artículo destacado</span>
+        </div>
+
+        <!-- Featured card -->
+        <article class="group relative bg-slate-900 border border-slate-700/50 rounded-2xl overflow-hidden hover:border-slate-600/50 transition-all duration-300 featured-card-border shadow-2xl shadow-black/40">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- Image -->
+            <div class="relative overflow-hidden h-64 lg:h-auto min-h-[320px]">
+              <img
+                src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=1200&h=630"
+                alt="Cómo elegir la almohada perfecta según tu postura al dormir"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="eager"
+              >
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-transparent lg:hidden"></div>
+              <!-- Category badge overlay -->
+              <div class="absolute top-4 left-4">
+                <span class="bg-accent-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg">Guías</span>
+              </div>
+            </div>
+            <!-- Content -->
+            <div class="p-8 lg:p-12 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="hidden lg:inline-flex bg-accent-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full">Guías</span>
+                <span class="flex items-center gap-1.5 text-slate-500 text-sm">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  8 min de lectura
+                </span>
+                <span class="text-slate-600">•</span>
+                <span class="text-slate-500 text-sm">15 enero 2026</span>
+              </div>
+
+              <h2 class="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight group-hover:text-accent-400 transition-colors">
+                Cómo elegir la almohada perfecta según tu postura al dormir
+              </h2>
+
+              <p class="text-slate-400 text-base leading-relaxed mb-8">
+                Descubre cómo elegir la almohada ideal según tu postura al dormir y mejora tu descanso y salud cervical desde hoy. Analizamos las diferencias entre dormir boca arriba, de lado o boca abajo y qué tipo de soporte necesita tu cuello en cada caso.
+              </p>
+
+              <!-- Author row -->
+              <div class="flex items-center gap-4 mb-8">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=96&h=96"
+                  alt="María García"
+                  class="w-10 h-10 rounded-full object-cover border-2 border-slate-700"
+                >
+                <div>
+                  <p class="text-white text-sm font-semibold">María García</p>
+                  <p class="text-slate-500 text-xs">Especialista en descanso</p>
+                </div>
+              </div>
+
+              <a href="elegir-almohada-perfecta.html"
+                class="inline-flex items-center gap-2 bg-accent-500 hover:bg-violet-400 text-white font-semibold rounded-xl px-6 py-3 transition-all duration-200 hover:scale-105 shadow-lg shadow-accent-500/25 self-start">
+                Leer artículo completo
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- POSTS GRID -->
+    <section id="posts-grid" data-animate="fade-up" class="py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section label -->
+        <div class="flex items-center justify-between mb-10">
+          <div class="flex items-center gap-3">
+            <span class="h-px w-10 bg-accent-500"></span>
+            <span class="text-accent-400 text-sm font-semibold uppercase tracking-wider">Más artículos</span>
+          </div>
+          <span class="text-slate-500 text-sm">3 artículos publicados</span>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="posts-container">
+
+          <!-- Post Card 2 -->
+          <article class="group bg-slate-900 border border-slate-700/50 rounded-2xl overflow-hidden hover:border-slate-600/50 hover:shadow-xl hover:shadow-black/40 transition-all duration-300 flex flex-col">
+            <div class="relative overflow-hidden h-52">
+              <img
+                src="https://images.unsplash.com/photo-1511688878353-3a9fc-6c93-31c3?auto=format&fit=crop&q=80&w=600&h=400"
+                alt="Almohadas cervicales: alivio del dolor de cuello mientras duermes"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                onerror="this.src='https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=600&h=400'"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+              <div class="absolute top-4 left-4">
+                <span class="bg-violet-600/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full">Tutoriales</span>
+              </div>
+              <!-- Read time badge -->
+              <div class="absolute bottom-4 right-4">
+                <span class="bg-slate-950/80 backdrop-blur-sm text-slate-300 text-xs font-medium px-2.5 py-1 rounded-lg flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  8 min
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6 flex flex-col flex-1">
+              <h2 class="font-serif text-xl md:text-2xl font-bold text-white mb-3 leading-snug group-hover:text-accent-400 transition-colors">
+                <a href="almohadas-cervicales-dolor-cuello.html" class="hover:text-

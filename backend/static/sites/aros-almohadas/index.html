@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020617">
+  <title>AlmohadaPlus | Almohadas Premium para Dormir Mejor</title>
+  <meta name="description" content="Compra almohadas premium viscoelásticas, cervicales e hipoalergénicas. Envío gratis en 24h, 30 noches de prueba y garantía de 3 años.">
+  <meta name="robots" content="index, follow">
+  
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AlmohadaPlus | Almohadas Premium para Dormir Mejor">
+  <meta property="og:description" content="Compra almohadas premium viscoelásticas, cervicales e hipoalergénicas. Envío gratis en 24h, 30 noches de prueba y garantía de 3 años.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=1200&h=630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AlmohadaPlus | Almohadas Premium para Dormir Mejor">
+  <meta name="twitter:description" content="Compra almohadas premium viscoelásticas, cervicales e hipoalergénicas. Envío gratis en 24h, 30 noches de prueba y garantía de 3 años.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            accent: {
+              50: '#a78bfa15',
+              100: '#a78bfa25',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#4c1d95',
+            },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease forwards',
+            'fade-in': 'fadeIn 0.5s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "AlmohadaPlus | Almohadas Premium para Dormir Mejor",
+    "description": "Compra almohadas premium viscoelásticas, cervicales e hipoalergénicas. Envío gratis en 24h, 30 noches de prueba y garantía de 3 años.",
+    "url": "index.html"
+  }
+  </script>
+
+  <style>
+    :root {
+      --accent-color: #8b5cf6;
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(circle, rgba(139,92,246,0.15) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .glow-orb {
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 200px; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform 0.3s ease; }
+    .text-accent-400 { color: #a78bfa; }
+    .text-accent-500 { color: #8b5cf6; }
+    .bg-accent-500 { background-color: #8b5cf6; }
+    .border-accent-500 { border-color: #8b5cf6; }
+    .shadow-accent { box-shadow: 0 0 40px rgba(139,92,246,0.3); }
+    .hero-img-overlay {
+      background: linear-gradient(to right, rgba(2,6,23,0.92) 40%, rgba(2,6,23,0.5) 100%);
+    }
+    .product-card:hover .product-img { transform: scale(1.05); }
+    .product-img { transition: transform 0.4s ease; }
+    .stars { color: #fbbf24; }
+  </style>
+</head>
+<body class="bg-slate-950 text-white font-sans antialiased overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-accent-500 flex items-center justify-center shadow-lg shadow-accent-500/25 group-hover:scale-110 transition-transform">
+            <span class="text-slate-950 font-black text-sm">A</span>
+          </div>
+          <span class="font-bold text-white text-lg tracking-tight">AlmohadaPlus</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-white">Inicio</a>
+          <a href="blog.html" class="text-slate-400 hover:text-white transition-colors">Blog</a>
+          <a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contacto</a>
+        </div>
+
+        <!-- CTA + Mobile toggle -->
+        <div class="flex items-center gap-3">
+          <a href="contact.html"
+            class="hidden md:inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-2.5 transition-all hover:scale-105 shadow-lg shadow-accent-500/20">
+            Comprar ahora
+          </a>
+          <button id="mobile-menu-btn" aria-label="Open menu"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-colors">
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-800">
+      <div class="px-4 py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Inicio</a>
+        <a href="blog.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Blog</a>
+        <a href="contact.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Contacto</a>
+        <a href="contact.html" class="block mt-2 text-center bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-3 transition-colors">
+          Comprar ahora
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- §2 HERO -->
+    <section id="hero" data-animate="fade-up" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Background image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=1600&h=900"
+          alt="Almohada premium AlmohadaPlus"
+          class="w-full h-full object-cover"
+        />
+        <div class="hero-img-overlay absolute inset-0"></div>
+      </div>
+
+      <!-- Background grid -->
+      <div class="absolute inset-0 z-1 bg-grid-pattern opacity-30"></div>
+
+      <!-- Floating glow orbs -->
+      <div class="glow-orb absolute top-1/4 left-1/4 w-96 h-96 bg-violet-600/20 animate-float" style="animation-delay: 0s;"></div>
+      <div class="glow-orb absolute bottom-1/4 right-1/4 w-80 h-80 bg-violet-500/15 animate-float" style="animation-delay: 2s;"></div>
+      <div class="glow-orb absolute top-1/2 right-1/3 w-64 h-64 bg-purple-700/10 animate-float" style="animation-delay: 4s;"></div>
+
+      <!-- Hero content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+        <div class="max-w-3xl">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 mb-8">
+            <span class="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></span>
+            <span class="text-slate-300 text-sm font-medium">Almohadas Premium Viscoelásticas</span>
+          </div>
+
+          <!-- Headline -->
+          <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6">
+            <span class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Las almohadas que</span>
+            <br />
+            <span class="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">transforman tu sueño</span>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-slate-300 text-xl md:text-2xl leading-relaxed mb-10 max-w-2xl">
+            Descubre almohadas premium diseñadas para darte el descanso que mereces cada noche.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="contact.html"
+              class="inline-flex items-center justify-center gap-2 bg-violet-500 hover:bg-violet-400 text-white font-semibold rounded-2xl px-8 py-4 text-lg transition-all hover:scale-105 shadow-lg shadow-violet-500/30">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+              Comprar ahora
+            </a>
+            <a href="blog.html"
+              class="inline-flex items-center justify-center gap-2 bg-white/5 backdrop-blur-md hover:bg-white/10 text-white font-semibold rounded-2xl px-8 py-4 text-lg border border-white/20 hover:border-white/40 transition-all">
+              Ver colección
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Trust indicators -->
+          <div class="flex flex-wrap items-center gap-6 mt-12">
+            <div class="flex items-center gap-2 text-slate-400 text-sm">
+              <svg class="w-4 h-4 text-violet-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Envío gratis en 24h
+            </div>
+            <div class="flex items-center gap-2 text-slate-400 text-sm">
+              <svg class="w-4 h-4 text-violet-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              30 noches de prueba
+            </div>
+            <div class="flex items-center gap-2 text-slate-400 text-sm">
+              <svg class="w-4 h-4 text-violet-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              Garantía 3 años
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-slate-500">
+        <span class="text-xs uppercase tracking-widest">Descubrir</span>
+        <div class="w-px h-10 bg-gradient-to-b from-slate-500 to-transparent"></div>
+      </div>
+    </section>
+
+    <!-- §3 STATS BAR -->
+    <section id="stats" data-animate="fade-up" class="relative py-16 bg-slate-900 border-y border-slate-800/50 overflow-hidden">
+      <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+
+          <div class="flex flex-col items-center text-center group">
+            <div class="font-mono text-4xl lg:text-5xl font-bold text-violet-400 mb-2 group-hover:scale-110 transition-transform">10K+</div>
+            <div class="text-slate-400 text-sm font-medium uppercase tracking-wider">Clientes felices</div>
+          </div>
+
+          <div class="flex flex-col items-center text-center group">
+            <div class="font-mono text-4xl lg:text-5xl font-bold text-violet-400 mb-2 group-hover:scale-110 transition-transform">98%</div>
+            <div class="text-slate-400 text-sm font-medium uppercase tracking-wider">Satisfacción</div>
+          </div>
+
+          <div class="flex flex-col items-center text-center group">
+            <div class="font-mono text-4xl lg:text-5xl font-bold text-violet-400 mb-2 group-hover:scale-110 transition-transform">4.9/5</div>
+            <div class="text-slate-400 text-sm font-medium uppercase tracking-wider">Valoración media</div>
+          </div>
+
+          <div class="flex flex-col items-center text-center group">
+            <div class="font-mono text-4xl lg:text-5xl font-bold text-violet-400 mb-2 group-hover:scale-110 transition-transform">24/7</div>
+            <div class="text-slate-400 text-sm font-medium uppercase tracking-wider">Soporte al cliente</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- §4 FEATURES -->
+    <section id="features" data-animate="fade-up" class="relative py-24 overflow-hidden">
+      <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <!-- Glow -->
+      <div class="glow-orb absolute top-0 right-0 w-96 h-96 bg-violet-600/10"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 mb-6">
+            <span class="text-violet-400 text-sm font-medium">¿Por qué AlmohadaPlus?</span>
+          </div>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">
+            <span class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Todo lo que necesitas para</span>
+            <br/>
+            <span class="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">dormir mejor</span>
+          </h2>
+          <p class="text-slate-400 text-lg max-w-2xl mx-auto">Diseñadas con la más alta tecnología para que cada noche sea un descanso perfecto.</p>
+        </div>
+
+        <!-- Features grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <article class="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 hover:border-violet-500/40 hover:bg-slate-900/80 transition-all group">
+            <div class="text-3xl mb-4">🚀</div>
+            <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-violet-300 transition-colors">Entrega rápida</h3>
+            <p class="text-slate-400 leading-relaxed">Recibe tu almohada en 24-48 horas con envío gratuito.</p>
+          </article>
+
+          <article class="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 hover:border-violet-500/40 hover:bg-slate-900/80 transition-all group">
+            <div class="text-3xl mb-4">🎯</div>
+            <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-violet-300 transition-colors">Diseño ergonómico</h3>
+            <p class="text-slate-400 leading-relaxed">Forma anatómica que se adapta perfectamente a tu cuello.</p>
+          </article>
+
+          <article class="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 hover:border-violet-500/40 hover:bg-slate-900/80 transition-all group">
+            <div class="text-3xl mb-4">💡</div>
+            <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-violet-300 transition-colors">Materiales premium</h3>
+            <p class="text-slate-400 leading-relaxed">Relleno de memoria viscoelástica de alta densidad certificado.</p>
+          </article>
+
+          <article class="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 hover:border-violet-500/40 hover:bg-slate-900/80 transition-all group">
+            <div class="text-3xl mb-4">🔒</div>
+            <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-violet-300 transition-colors">Garantía 3 años</h3>
+            <p class="text-slate-400 leading-relaxed">Cobertura total ante cualquier defecto de fabricación.</p>
+          </article>
+
+          <article class="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 hover:border-violet-500/40 hover:bg-slate-900/80 transition-all group">
+            <div class="text-3xl mb-4">📈</div>
+            <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-violet-300 transition-colors">Mejor sueño</h3>
+            <p class="text-slate-400 leading-relaxed">Clínicamente probado para reducir el dolor cervical nocturno.</p>
+          </article>
+
+          <article class="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 hover:border-violet-500/40 hover:bg-slate-900/80 transition-all group">
+            <div class="text-3xl mb-4">⚡</div>
+            <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-violet-300 transition-colors">Funda lavable</h3>
+            <p class="text-slate-400 leading-relaxed">Funda hipoalergénica extraíble y lavable a máquina fácilmente.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE (Monetization) -->
+    <section id="products" data-animate="fade-up" class="relative py-24 bg-slate-900 overflow-hidden">
+      <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <div class="glow-orb absolute bottom-0 left-0 w-80 h-80 bg-violet-700/15"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 rounded-full px-4 py-2 mb-6">
+            <span class="text-violet-400 text-sm font-medium">Nuestra colección</span>
+          </div>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4">
+            <span class="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">Almohadas para cada</span>
+            <br/>
+            <span class="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">tipo de durmiente</span>
+          </h2>
+          <p class="text-slate-400 text-lg max-w-2xl mx-auto">Elige la que mejor se adapta a ti y empieza a dormir como nunca antes.</p>
+        </div>
+
+        <!-- Product cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Product 1 -->
+          <article class="product-card bg-slate-950 border border-slate-700/50 rounded-2xl overflow-hidden hover:border-violet-500/50 transition-all group">
+            <div class="overflow-hidden h-56">
+              <img
+                src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=600&h=400"
+                alt="Almohada Viscoelástica Clásica"
+                class="product-img w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-1 mb-2">
+                <span class="stars text-sm">★★★★★</span>
+                <span class="text-slate-500 text-xs ml-1">(248)</span>
+              </div>
+              <h3 class="font-semibold text-white text-lg mb-1">Almohada Viscoelástica Clásica</h3>
+              <p class="text-slate-400 text-sm mb-4 leading-relaxed">Firmeza media ideal para dormir de lado. Relleno de espuma viscoelástica certificada.</p>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-violet-400 font-bold text-2xl font-mono">59,99 €</span>
+                  <span class="text-slate-600 text-sm line-through ml-2">79,99 €</span>
+                </div>
+              </div>
+              <button data-stripe-checkout="true"
+                class="mt-4 w-full bg-violet-500 hover:bg-violet-400 text-white font-semibold rounded-xl py-3 px-6 transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-500/25 flex items-center justify-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                </svg>
+                Comprar ahora
+              </button>
+            </div>
+          </article>
+
+          <!-- Product 2 (Featured) -->
+          <article class="product-card bg-slate-950 border border-violet-500/60 rounded-2xl overflow-hidden hover:border-violet-400 transition-all group relative">
+            <div class="absolute top-4 left-4 z-10">
+              <span class="bg-violet-500 text-white text-xs font-bold uppercase tracking-wider rounded-full px-3 py-1">Más vendido</span>
+            </div>
+            <div class="overflow-hidden h-56">
+              <img
+                src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&q=80&w=600&h=400"
+                alt="Almohada Cervical Premium"
+                class="product-img w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-1 mb-2">
+                <span class="stars text-sm">★★★★★</span>
+                <span class="text-slate-500 text-xs ml-1">(512)</span>
+              </div>
+              <h3 class="font-semibold text-white text-lg mb-1">Almohada Cervical Premium</h3>
+              <p class="text-slate-400 text-sm mb-4 leading-relaxed">Diseño ergonómico con curva cervical que alivia y previene

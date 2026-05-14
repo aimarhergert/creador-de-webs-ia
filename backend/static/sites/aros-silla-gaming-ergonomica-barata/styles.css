@@ -1,0 +1,63 @@
+:root {
+  --color-primary: #00ff88;
+  --color-secondary: #ff3c00;
+  --color-dark: #0a0a0f;
+  --color-card: #12121a;
+  --color-text: #e8e8f0;
+  --color-muted: #7a7a9a;
+  --font-display: 'Rajdhani', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.8); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes countdown-tick {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); color: var(--color-secondary); }
+  100% { transform: scale(1); }
+}
+
+.hero-gradient {
+  background: radial-gradient(ellipse at top left, rgba(0,255,136,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at bottom right, rgba(255,60,0,0.1) 0%, transparent 60%),
+              var(--color-dark);
+}
+
+.cta-button {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.chair-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.price-tag {
+  background: linear-gradient(135deg, var(--color-secondary), #ff6a00);
+}
+
+.badge-offer {
+  background: linear-gradient(135deg, #00ff88, #00c96a);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-dark); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

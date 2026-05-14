@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020617">
+  <title>Blog | SoundPeak</title>
+  <meta name="description" content="Artículos y guías sobre auriculares inalámbricos premium 2024. Recursos expertos para SoundPeak.">
+  <meta name="robots" content="index, follow">
+  
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog | SoundPeak">
+  <meta property="og:description" content="Artículos y guías sobre auriculares inalámbricos premium 2024. Recursos expertos para SoundPeak.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=1200&h=630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | SoundPeak">
+  <meta name="twitter:description" content="Artículos y guías sobre auriculares inalámbricos premium 2024. Recursos expertos para SoundPeak.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            accent: {
+              50: '#a78bfa15',
+              100: '#a78bfa25',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#4c1d95',
+            },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease forwards',
+            'fade-in': 'fadeIn 0.5s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Blog de SoundPeak",
+  "description": "Artículos sobre auriculares inalámbricos premium 2024",
+  "url": "blog.html"
+}
+</script>
+  <style>
+    :root {
+      --accent-color: #8b5cf6;
+    }
+    body {
+      background-color: #020617;
+    }
+    .bg-grid-pattern {
+      background-image: radial-gradient(circle, rgba(139,92,246,0.12) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    .text-accent-400 { color: #a78bfa; }
+    .text-accent-500 { color: #8b5cf6; }
+    .bg-accent-500 { background-color: #8b5cf6; }
+    .border-accent-500 { border-color: #8b5cf6; }
+    .shadow-accent { box-shadow: 0 0 40px rgba(139,92,246,0.25); }
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .featured-card-border {
+      border-left: 4px solid #8b5cf6;
+    }
+    .pill-active {
+      background-color: #8b5cf6;
+      color: #fff;
+    }
+    .pill-inactive {
+      background-color: rgba(139,92,246,0.08);
+      color: #a78bfa;
+      border: 1px solid rgba(139,92,246,0.25);
+    }
+    .pill-inactive:hover {
+      background-color: rgba(139,92,246,0.18);
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-18px); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      border-color: rgba(139,92,246,0.4);
+    }
+    .newsletter-gradient {
+      background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(76,29,149,0.08) 50%, rgba(139,92,246,0.05) 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 font-sans text-white antialiased">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-accent-500 flex items-center justify-center shadow-lg shadow-accent-500/25 group-hover:scale-110 transition-transform">
+            <span class="text-slate-950 font-black text-sm">S</span>
+          </div>
+          <span class="font-bold text-white text-lg tracking-tight">SoundPeak</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Inicio</a>
+<a href="blog.html" class="text-white">Blog</a>
+<a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contacto</a>
+
+        </div>
+
+        <!-- CTA + Mobile toggle -->
+        <div class="flex items-center gap-3">
+          <a href="contact.html"
+            class="hidden md:inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-2.5 transition-all hover:scale-105 shadow-lg shadow-accent-500/20">
+            Ver recomendaciones
+          </a>
+          <button id="mobile-menu-btn" aria-label="Open menu"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-colors">
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-800">
+      <div class="px-4 py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Inicio</a>
+<a href="blog.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Blog</a>
+<a href="contact.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Contacto</a>
+        <a href="contact.html" class="block mt-2 text-center bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-3 transition-colors">
+          Ver recomendaciones
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="blog-hero" data-animate="fade-up" class="relative min-h-[52vh] flex items-center justify-center overflow-hidden pt-20">
+      <!-- Background grid -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
+      <!-- Glow orbs -->
+      <div class="glow-orb w-96 h-96 bg-violet-600/20 top-[-80px] left-[-80px] animate-float"></div>
+      <div class="glow-orb w-72 h-72 bg-purple-500/15 bottom-[-40px] right-[-60px] animate-float" style="animation-delay:2s;"></div>
+      <div class="glow-orb w-48 h-48 bg-accent-500/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+      <!-- Overlay gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/30 via-transparent to-slate-950"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="flex items-center justify-center gap-2 text-sm text-slate-500 mb-6">
+          <a href="index.html" class="hover:text-slate-300 transition-colors">Inicio</a>
+          <svg class="w-3.5 h-3.5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span class="text-accent-400 font-medium">Blog</span>
+        </nav>
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-accent-50 border border-accent-500/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+          <span class="text-accent-400 text-xs font-semibold uppercase tracking-widest">Guías &amp; Análisis</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-5 bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+          El Blog de<br>SoundPeak
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Guías expertas, comparativas y análisis en profundidad sobre auriculares inalámbricos premium. Todo lo que necesitas saber para elegir el sonido perfecto.
+        </p>
+
+        <!-- Category filter pills -->
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <button class="pill-active rounded-full px-5 py-2 text-sm font-semibold transition-all cursor-pointer">Todos</button>
+          <button class="pill-inactive rounded-full px-5 py-2 text-sm font-semibold transition-all cursor-pointer">Guías</button>
+          <button class="pill-inactive rounded-full px-5 py-2 text-sm font-semibold transition-all cursor-pointer">Tutoriales</button>
+          <button class="pill-inactive rounded-full px-5 py-2 text-sm font-semibold transition-all cursor-pointer">Estrategias</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED POST -->
+    <section id="featured-post" data-animate="fade-up" class="py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section label -->
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-accent-400 text-xs font-bold uppercase tracking-widest">Artículo destacado</span>
+          <div class="flex-1 h-px bg-slate-800"></div>
+        </div>
+
+        <article class="bg-slate-900 border border-slate-700/50 rounded-2xl overflow-hidden featured-card-border card-hover group">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- Image -->
+            <div class="relative overflow-hidden h-64 lg:h-auto min-h-[320px]">
+              <img
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=1200&h=630"
+                alt="Mejores auriculares inalámbricos premium 2024: guía de compra completa"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                width="1200" height="630"
+                loading="eager"
+              >
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-900/30 to-transparent lg:bg-gradient-to-l"></div>
+              <!-- Category badge on image -->
+              <div class="absolute top-4 left-4">
+                <span class="bg-accent-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg">
+                  Guía de compra
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-8 lg:p-10 flex flex-col justify-center">
+              <!-- Meta -->
+              <div class="flex items-center gap-4 text-slate-500 text-sm mb-4">
+                <div class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span>8 min de lectura</span>
+                </div>
+                <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+                <span>Enero 2024</span>
+              </div>
+
+              <!-- Title -->
+              <h2 class="font-serif text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-accent-400 transition-colors">
+                Mejores auriculares inalámbricos premium 2024: guía de compra completa
+              </h2>
+
+              <!-- Excerpt -->
+              <p class="text-slate-400 text-base leading-relaxed mb-6">
+                Comparamos los 10 mejores auriculares inalámbricos premium de 2024 con ANC, batería y calidad de sonido. Encuentra tu modelo ideal con nuestra guía experta actualizada.
+              </p>
+
+              <!-- Author row -->
+              <div class="flex items-center gap-3 mb-8">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=96&h=96"
+                  alt="Autor SoundPeak"
+                  class="w-9 h-9 rounded-full object-cover border-2 border-accent-500/40"
+                  width="96" height="96"
+                >
+                <div>
+                  <p class="text-white text-sm font-semibold">Equipo SoundPeak</p>
+                  <p class="text-slate-500 text-xs">Especialistas en audio premium</p>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <a href="mejores-auriculares-inalambricos-premium-2024.html"
+                class="inline-flex items-center gap-2 bg-accent-500 hover:bg-violet-400 text-white font-semibold rounded-xl px-6 py-3 transition-all hover:scale-105 shadow-lg shadow-accent-500/25 self-start text-sm">
+                Leer artículo completo
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- POSTS GRID -->
+    <section id="posts-grid" data-animate="fade-up" class="py-8 md:py-12 pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section label -->
+        <div class="flex items-center gap-3 mb-8">
+          <span class="text-accent-400 text-xs font-bold uppercase tracking-widest">Más artículos</span>
+          <div class="flex-1 h-px bg-slate-800"></div>
+          <span class="text-slate-600 text-xs">2 artículos</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+          <!-- Post Card 2 -->
+          <article class="bg-slate-900 border border-slate-700/50 rounded-2xl overflow-hidden card-hover group flex flex-col">
+            <!-- Image -->
+            <div class="relative overflow-hidden h-52">
+              <img
+                src="https://images.unsplash.com/photo-1518770055-fe5e233b75c7?auto=format&fit=crop&q=80&w=600&h=400"
+                alt="Cancelación de ruido activa: cómo funciona y qué modelos destacan en 2024"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                width="600" height="400"
+                loading="lazy"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+              <!-- Category badge -->
+              <div class="absolute top-4 left-4">
+                <span class="bg-slate-900/80 backdrop-blur-sm border border-accent-500/40 text-accent-400 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+                  Tecnología
+                </span>
+              </div>
+              <!-- Read time badge -->
+              <div class="absolute top-4 right-4">
+                <span class="bg-slate-900/80 backdrop-blur-sm text-slate-300 text-xs font-medium px-2.5 py-1 rounded-full flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  8 min
+                </span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 flex flex-col flex-1">
+              <h2 class="font-serif text-xl font-bold text-white mb-3 leading-snug group-hover:text-accent-400 transition-colors">
+                <a href="cancelacion-de-ruido-activa-auriculares-2024.html" class="hover:text-accent-400">
+                  Cancelación de ruido activa: cómo funciona y qué modelos destacan en 2024
+                </a>
+              </h2>
+              <p class="text-slate-400 text-sm leading-relaxed mb-5

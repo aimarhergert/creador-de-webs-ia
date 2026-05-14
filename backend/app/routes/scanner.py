@@ -1,0 +1,147 @@
+"""External Website Scanner routes."""
+
+import json
+from fastapi import APIRouter, HTTPException, Query, Depends
+from pydantic import BaseModel
+from sqlalchemy import select, func, desc
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.database import get_db
+from app.dependencies import get_current_user
+from app.models.user import User
+from app.models.scan import WebScan
+from app.services.web_scanner import scan_website, ScanResult
+
+router = APIRouter()
+
+
+class ScanRequest(BaseModel):
+    url: str
+    deep_analysis: bool = True
+
+
+class ScanOut(BaseModel):
+    id: int
+    url: str
+    domain: str
+    status_code: int
+    seo_score: int
+    content_score: int
+    word_count: int
+    title: str | None
+    meta_description: str | None
+    top_keywords: str | None
+    estimated_traffic: int
+    estimated_cpc: float
+    content_type: str | None
+    ai_insights: str | None
+    recommendations: str | None
+    error: str | None
+    created_at: str
+
+    model_config = {"from_attributes": True}
+
+
+class ScanListOut(BaseModel):
+    total: int
+    items: list[ScanOut]
+
+
+class ScanFullOut(ScanOut):
+    raw_data: str | None = None
+
+    model_config = {"from_attributes": True}
+
+
+@router.post("/analyze", response_model=ScanFullOut)
+async def analyze_url(
+    body: ScanRequest,
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    """Analyze an external website for SEO, content, and market intelligence."""
+    if not body.url.startswith("http"):
+        body.url = f"https://{body.url}"
+
+    # Run scan
+    result = await scan_website(body.url, deep_analysis=body.deep_analysis)
+
+    # Persist
+    from app.services.web_scanner import persist_scan
+    scan_id = await persist_scan(body.url, result)
+
+    # Return
+    scan_result = await db.execute(select(WebScan).where(WebScan.id == scan_id))
+    scan = scan_result.scalar_one()
+
+    return ScanFullOut(
+        id=scan.id, url=scan.url, domain=scan.domain,
+        status_code=scan.status_code, seo_score=scan.seo_score,
+        content_score=scan.content_score, word_count=scan.word_count,
+        title=scan.title, meta_description=scan.meta_description,
+        top_keywords=scan.top_keywords,
+        estimated_traffic=scan.estimated_traffic,
+        estimated_cpc=scan.estimated_cpc,
+        content_type=scan.content_type,
+        ai_insights=scan.ai_insights,
+        recommendations=scan.recommendations,
+        raw_data=scan.raw_data,
+        error=scan.error,
+        created_at=scan.created_at.isoformat() if scan.created_at else "",
+    )
+
+
+@router.get("/history", response_model=ScanListOut)
+async def list_scans(
+    limit: int = Query(default=20, le=100),
+    db: AsyncSession = Depends(get_db),
+    current_user: User = Depends(get_current_user),
+):
+    count_q = await db.execute(select(func.count()).select_from(WebScan))
+    total = count_q.scalar()
+
+    result = await db.execute(
+        select(WebScan).order_by(desc(WebScan.created_at)).limit(limit)
+    )
+    scans = result.scalars().all()
+
+    return ScanListOut(
+        total=total,
+        items=[ScanOut(
+            id=s.id, url=s.url, domain=s.domain,
+            status_code=s.status_code, seo_score=s.seo_score,
+            content_score=s.content_score, word_count=s.word_count,
+            title=s.title, meta_description=s.meta_description,
+            top_keywords=s.top_keywords,
+            estimated_traffic=s.estimated_traffic,
+            estimated_cpc=s.estimated_cpc,
+            content_type=s.content_type,
+            ai_insights=s.ai_insights,
+            recommendations=s.recommendations,
+            error=s.error,
+            created_at=s.created_at.isoformat() if s.created_at else "",
+        ) for s in scans]
+    )
+
+
+@router.get("/history/{scan_id}", response_model=ScanFullOut)
+async def get_scan(scan_id: int, db: AsyncSession = Depends(get_db), current_user: User = Depends(get_current_user)):
+    result = await db.execute(select(WebScan).where(WebScan.id == scan_id))
+    scan = result.scalar_one_or_none()
+    if not scan:
+        raise HTTPException(status_code=404, detail="Escaneo no encontrado")
+    return ScanFullOut(
+        id=scan.id, url=scan.url, domain=scan.domain,
+        status_code=scan.status_code, seo_score=scan.seo_score,
+        content_score=scan.content_score, word_count=scan.word_count,
+        title=scan.title, meta_description=scan.meta_description,
+        top_keywords=scan.top_keywords,
+        estimated_traffic=scan.estimated_traffic,
+        estimated_cpc=scan.estimated_cpc,
+        content_type=scan.content_type,
+        ai_insights=scan.ai_insights,
+        recommendations=scan.recommendations,
+        raw_data=scan.raw_data,
+        error=scan.error,
+        created_at=scan.created_at.isoformat() if scan.created_at else "",
+    )

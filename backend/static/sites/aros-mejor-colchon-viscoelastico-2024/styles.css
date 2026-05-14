@@ -1,0 +1,67 @@
+:root {
+  --color-primary: #2c3e7a;
+  --color-secondary: #e8a020;
+  --color-accent: #f0c060;
+  --color-bg: #f8f7f4;
+  --color-text: #1a1a2e;
+  --color-soft: #eef0f8;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes starPulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #1a2550 60%, #0d1433 100%);
+}
+
+.cta-gradient {
+  background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+}
+
+.card-shine {
+  background: linear-gradient(145deg, #ffffff 0%, var(--color-soft) 100%);
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.7s ease both;
+}
+
+.star-pulse {
+  animation: starPulse 1.5s ease-in-out infinite;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-soft); }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 4px; }
+
+*:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.badge-top {
+  background: linear-gradient(90deg, #e8a020, #f5d080);
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}

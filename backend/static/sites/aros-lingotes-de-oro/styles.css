@@ -1,0 +1,69 @@
+:root {
+  --color-gold: #c9a84c;
+  --color-gold-light: #f0d080;
+  --color-gold-dark: #8b6914;
+  --color-bg-deep: #0a0800;
+  --color-bg-card: #1a1500;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg-deep);
+  font-family: var(--font-body);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.3); }
+  50% { box-shadow: 0 0 50px rgba(201, 168, 76, 0.7); }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold-dark),
+    var(--color-gold-light),
+    var(--color-gold),
+    var(--color-gold-light),
+    var(--color-gold-dark)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #2a1f00 0%, #0a0800 50%, #1a1200 100%);
+}
+
+.ingot-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.cta-glow {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+.hero-radial {
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, transparent 70%);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--color-gold-dark); border-radius: 3px; }
+
+*:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}

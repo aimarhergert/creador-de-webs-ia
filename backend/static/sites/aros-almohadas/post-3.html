@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020617">
+  <title>Almohadas para niños: seguridad y comodidad desde los primeros años | AlmohadaPlus</title>
+  <meta name="description" content="Guía completa para elegir almohadas seguras y cómodas para niños, con materiales hipoalergénicos y medidas recomendadas.">
+  <meta name="robots" content="index, follow">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Almohadas para niños: seguridad y comodidad desde los primeros años | AlmohadaPlus">
+  <meta property="og:description" content="Guía completa para elegir almohadas seguras y cómodas para niños, con materiales hipoalergénicos y medidas recomendadas.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1200&h=630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Almohadas para niños: seguridad y comodidad desde los primeros años | AlmohadaPlus">
+  <meta name="twitter:description" content="Guía completa para elegir almohadas seguras y cómodas para niños, con materiales hipoalergénicos y medidas recomendadas.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            accent: {
+              50: '#a78bfa15',
+              100: '#a78bfa25',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#4c1d95',
+            },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease forwards',
+            'fade-in': 'fadeIn 0.5s ease forwards',
+            'float': 'float 6s ease-in-out infinite',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    #reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+      z-index: 9999;
+      transition: width 0.1s linear;
+    }
+    body {
+      background-color: #020617;
+      color: #cbd5e1;
+    }
+    #navbar {
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    }
+    .prose-article h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .prose-article h3 {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-top: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+    .prose-article p {
+      color: #94a3b8;
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .prose-article strong {
+      color: #e2e8f0;
+    }
+    .toc-link {
+      display: block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      color: #94a3b8;
+      transition: all 0.2s;
+      border-left: 2px solid transparent;
+    }
+    .toc-link:hover {
+      color: #a78bfa;
+      background: rgba(167, 139, 250, 0.08);
+      border-left-color: #8b5cf6;
+    }
+    .sidebar-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-radius: 1rem;
+      padding: 1.5rem;
+    }
+    .related-card {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.875rem;
+      border-radius: 0.75rem;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.08);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .related-card:hover {
+      background: rgba(139, 92, 246, 0.1);
+      border-color: rgba(139, 92, 246, 0.3);
+    }
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.625rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Almohadas para niños: seguridad y comodidad desde los primeros años",
+    "description": "Guía completa para elegir almohadas seguras y cómodas para niños, con materiales hipoalergénicos y medidas recomendadas.",
+    "image": "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1200",
+    "author": {"@type": "Person", "name": "Equipo AlmohadaPlus"},
+    "publisher": {"@type": "Organization", "name": "AlmohadaPlus"},
+    "datePublished": "2026-05-13",
+    "dateModified": "2026-05-13",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "almohadas-para-ninos.html"}
+  }
+  </script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans antialiased">
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" role="progressbar" aria-label="Progreso de lectura"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-9 h-9 rounded-xl bg-accent-500 flex items-center justify-center shadow-lg shadow-accent-500/25 group-hover:scale-110 transition-transform">
+            <span class="text-slate-950 font-black text-sm">A</span>
+          </div>
+          <span class="font-bold text-white text-lg tracking-tight">AlmohadaPlus</span>
+        </a>
+
+        <!-- Desktop nav -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="index.html" class="text-slate-400 hover:text-white transition-colors">Inicio</a>
+          <a href="blog.html" class="text-white">Blog</a>
+          <a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contacto</a>
+        </div>
+
+        <!-- CTA + Mobile toggle -->
+        <div class="flex items-center gap-3">
+          <a href="contact.html"
+            class="hidden md:inline-flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-2.5 transition-all hover:scale-105 shadow-lg shadow-accent-500/20">
+            Comprar ahora
+          </a>
+          <button id="mobile-menu-btn" aria-label="Open menu"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-slate-700 text-slate-400 hover:text-white hover:border-slate-500 transition-colors">
+            <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-slate-800">
+      <div class="px-4 py-4 space-y-1">
+        <a href="index.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Inicio</a>
+        <a href="blog.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Blog</a>
+        <a href="contact.html" class="block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">Contacto</a>
+        <a href="contact.html" class="block mt-2 text-center bg-violet-500 hover:bg-violet-400 text-slate-950 text-sm font-semibold rounded-xl px-5 py-3 transition-colors">
+          Comprar ahora
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE WRAPPER -->
+  <div class="pt-16 lg:pt-20">
+
+    <!-- HERO IMAGE -->
+    <div class="w-full h-64 sm:h-80 lg:h-96 overflow-hidden relative">
+      <img
+        src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1200&h=630"
+        alt="Niño durmiendo cómodamente sobre una almohada suave en su cama infantil"
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+      <!-- Category badge -->
+      <div class="absolute bottom-6 left-6">
+        <span class="inline-flex items-center gap-2 bg-accent-500/90 text-white text-xs font-semibold px-3 py-1.5 rounded-full backdrop-blur-sm">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/></svg>
+          Guía infantil
+        </span>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main class="lg:grid lg:grid-cols-3 lg:gap-12">
+
+        <!-- ARTICLE -->
+        <article class="lg:col-span-2 prose-article">
+
+          <!-- Article Header -->
+          <header class="mb-10">
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+              Almohadas para niños: seguridad y comodidad desde los primeros años
+            </h1>
+
+            <!-- Meta row -->
+            <div class="flex flex-wrap items-center gap-4 mb-8 pb-8 border-b border-slate-800">
+              <!-- Author -->
+              <div class="flex items-center gap-3">
+                <img
+                  src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&q=80&w=80&h=80"
+                  alt="Foto de la autora Sofía Martínez Ruiz"
+                  class="w-11 h-11 rounded-full object-cover ring-2 ring-accent-500/40"
+                >
+                <div>
+                  <p class="text-sm font-semibold text-white">Sofía Martínez Ruiz</p>
+                  <p class="text-xs text-slate-500">Especialista en descanso infantil · AlmohadaPlus</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 text-xs text-slate-500 ml-auto flex-wrap">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  13 mayo 2026
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  8 min de lectura
+                </span>
+              </div>
+            </div>
+
+            <!-- Social share -->
+            <div class="flex items-center gap-3 flex-wrap mb-2">
+              <span class="text-xs text-slate-500 font-medium uppercase tracking-wider">Compartir:</span>
+              <button class="share-btn bg-[#1DA1F2]/10 text-[#1DA1F2] hover:bg-[#1DA1F2]/20" aria-label="Compartir en Twitter">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Twitter
+              </button>
+              <button class="share-btn bg-[#0A66C2]/10 text-[#0A66C2] hover:bg-[#0A66C2]/20" aria-label="Compartir en LinkedIn">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </button>
+              <button class="share-btn bg-[#E4405F]/10 text-[#E4405F] hover:bg-[#E4405F]/20" aria-label="Compartir en Instagram">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Instagram
+              </button>
+            </div>
+          </header>
+
+          <!-- Intro -->
+          <p>El sueño es uno de los pilares fundamentales del desarrollo infantil. Durante los primeros años de vida, los niños pasan una gran parte del día durmiendo, y la calidad de ese descanso influye directamente en su crecimiento físico, su desarrollo cognitivo y su estado emocional. Por eso, elegir correctamente los accesorios del sueño, y en especial la almohada, es una decisión que los padres deben tomar con especial cuidado y conocimiento.</p>
+
+          <p>En esta guía completa de <strong>AlmohadaPlus</strong> te explicamos todo lo que necesitas saber para elegir la almohada ideal para tu hijo: desde la edad recomendada para empezar a usarla, hasta los materiales más seguros, las medidas adecuadas y las marcas que han ganado la confianza de familias en toda España y Latinoamérica. Con información respaldada por pediatras y expertos en descanso infantil, podrás tomar la mejor decisión para garantizar las noches más seguras y reparadoras para tus pequeños.</p>
+
+          <!-- SECTION 1 -->
+          <section id="section-1">
+            <h2>A qué edad usar almohada</h2>
+
+            <p>Una de las preguntas más frecuentes que se hacen los padres primerizos es precisamente cuándo es el momento adecuado para introducir una almohada en la cama del bebé o del niño pequeño. La respuesta no es única, ya que depende de múltiples factores como el desarrollo físico del menor, la postura habitual al dormir y las recomendaciones médicas vigentes. Sin embargo, existe un consenso bastante claro en la comunidad pediátrica que conviene conocer antes de tomar cualquier decisión.</p>
+
+            <p>Es importante entender que las almohadas no son accesorios neutros: pueden suponer un riesgo si se introducen demasiado pronto o si se elige un modelo inadecuado para la etapa de desarrollo del niño. Por eso, antes de comprar cualquier almohada infantil, te recomendamos consultar con el pediatra de tu hijo y tener en cuenta las guías de seguridad publicadas por organismos de salud reconocidos como la Academia Americana de Pediatría (AAP) y la Asociación Española de Pediatría (AEP).</p>
+
+            <p>A continuación, desglosamos las recomendaciones según la franja de edad, diferenciando entre bebés menores de dos años y niños más mayores que ya pueden beneficiarse de una almohada diseñada especialmente para ellos.</p>
+
+            <h3>Bebés y almohadas</h3>
+
+            <p>La posición de los bebés durante el sueño es un tema de máxima importancia para su seguridad. Los expertos en salud infantil son categóricos al respecto: <strong>los bebés menores de 12 meses no deben dormir con almohada bajo ningún concepto</strong>. El motivo principal es el riesgo de asfixia. La cabeza de un recién nacido es grande en proporción a su cuerpo, y su cuello aún no tiene la fuerza suficiente para girar con autonomía si queda cubierta por una superficie blanda. Las almohadas, por muy pequeñas que sean, pueden obstruir las vías respiratorias y provocar situaciones de peligro.</p>
+
+            <p>La superficie de dormir de un bebé debe ser siempre firme, plana y libre de objetos sueltos como mantas gruesas, peluches y, por supuesto, almohadas. Esta recomendación está directamente relacionada con la prevención del Síndrome de Muerte Súbita del Lactante (SMSL). Durante el primer año de vida, la cuna del bebé debe contar únicamente con el colchón, la sábana ajustable y, si el frío lo requiere, un saco de dormir específico para lactantes. Cualquier otro elemento que pueda acumular calor o bloquear el movimiento de la cabeza debe eliminarse del entorno de sueño del pequeño.</p>
+
+            <h3>Niños mayores de 2 años</h3>
+
+            <p>A partir de los dos años, la situación cambia de forma significativa. Un niño de esta edad ya tiene mayor control motor, puede girar la cabeza con facilidad y su sistema musculoesquelético está en una etapa de desarrollo que se puede beneficiar de un soporte postural adecuado durante el sueño. Es en este momento cuando se puede valorar la introducción de una almohada infantil, siempre que sea de un tamaño y firmeza apropiados para su etapa de crecimiento.</p>
+
+            <p>Sin embargo, que se pueda introducir la almohada no significa que todos los niños de dos años la necesiten de inmediato. Muchos niños duermen perfectamente sin almohada hasta los tres o incluso cuatro años. La clave está en observar si el niño busca elevar la cabeza de forma natural, si se queja de molestias en el cuello o si simplemente ha mostrado interés en dormir con una almohada como la de los adultos. En cualquier caso, la transición debe hacerse de forma gradual y siempre con modelos diseñados específicamente para la edad infantil.</p>
+          </section>
+
+          <!-- SECTION 2 -->
+          <section id="section-2">
+            <h2>Materiales seguros para niños</h2>
+
+            <p>Cuando se trata de almohadas infantiles, la elección del material de relleno es tan importante como el tamaño o la firmeza. Los niños son especialmente vulnerables a las alergias, al asma y a las irritaciones cutáneas, por lo que resulta fundamental optar por materiales que hayan sido testados dermatológicamente y que cuenten con certificaciones de seguridad reconocidas. Entre los sellos más valorados en Europa destacan el <strong>OEKO-TEX Standard 100</strong>, el certificado <strong>CertiPUR</strong> para espumas y el sello <strong>Downafresh</strong> para plumas y fibras naturales.</p>
+
+            <p>Los rellenos sintéticos de microfibra hipoalergénica son, hoy en día, una de las opciones más recomendadas para almohadas infantiles. Este tipo de material no favorece la proliferación de ácaros del polvo, uno de los principales desencadenantes del asma infantil, y además resulta fácil de lavar a altas temperaturas, lo que permite mantener una higiene óptima. Las almohadas de microfibra son también ligeras y moldeables, adaptándose bien a la forma de la cabeza del niño sin crear presiones excesivas sobre el cuello.</p>
+
+            <p>Otras opciones interesantes incluyen el látex natural de baja densidad, que ofrece un buen equilibrio entre soporte y suavidad, y las almohadas rellenas de copos de espuma viscoelástica adaptados para uso infantil. En el caso del látex, es importante confirmar que se trata de látex 100% natural y que el niño no presenta alergia a este material. Por su parte, las almohadas de copos viscoelásticos permiten una adaptación ergonómica que puede ser beneficiosa para niños que ya presentan algún tipo de tensión cervical. Lo que conviene evitar son los rellenos de plumas o plumón convencionales, ya que pueden desencadenar reacciones alérgicas y retienen la humedad con mayor facilidad.</p>
+          </section>
+
+          <!-- SECTION 3 -->
+          <section id="section-3">
+            <h2>Medidas y firmeza ideales</h2>
+
+            <p>Una almohada de adulto resulta completamente inadecuada para un niño, no solo por su tamaño excesivo sino también por su nivel de firmeza y altura, que están diseñados para compensar la anchura de los hombros de una persona adulta. Usar una almohada demasiado alta puede provocar una flexión forzada del cuello del menor, generando tensiones musculares, dolores de cabeza matinales e incluso problemas posturales a largo plazo si el hábito se mantiene durante varios años. Por eso, los fabricantes especializados en descanso infantil ofrecen almohadas con medidas y características específicas para cada franja de edad.</p>
+
+            <p>El objetivo de la almohada infantil es mantener la columna vertebral en una alineación neutra mientras el niño duerme. Esto significa que la cabeza debe quedar a la misma altura que el resto del cuerpo, sin inclinarse ni hacia adelante ni hacia atrás. Para conseguirlo, la altura de la almohada debe calcularse en función de la anchura del hombro del niño

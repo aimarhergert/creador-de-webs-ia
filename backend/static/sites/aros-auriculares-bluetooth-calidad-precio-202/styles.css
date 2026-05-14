@@ -1,0 +1,70 @@
+:root {
+  --color-primary: #6c3de8;
+  --color-secondary: #00d4ff;
+  --color-accent: #ff6b35;
+  --color-dark: #0d0d1a;
+  --color-card: #1a1a2e;
+  --color-text: #e8e8f0;
+  --color-muted: #8888aa;
+  --font-heading: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(108, 61, 232, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(108, 61, 232, 0.8), 0 0 60px rgba(0, 212, 255, 0.3); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes badge-pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a0a3e 50%, #0a1a3e 100%);
+}
+
+.card-gradient {
+  background: linear-gradient(145deg, #1a1a2e, #16213e);
+}
+
+.cta-gradient {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+.badge-best {
+  background: linear-gradient(135deg, #ff6b35, #ff4d00);
+  animation: badge-pop 0.4s ease-out forwards;
+}
+
+.product-card {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.product-image {
+  animation: float 4s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
